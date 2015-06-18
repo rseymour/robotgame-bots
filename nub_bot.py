@@ -38,7 +38,7 @@ class Robot:
 
     def flee(self):
         """Move away from enemy robots (but not into the spawn area if a spawn is about to occur.)"""
-        return self.move(self.random_adjcaent_unoccupied_safe_location())
+        return self.move(self.random_adjacent_unoccupied_safe_location())
 
     def explore(self):
         """Move randomly into any location."""
@@ -123,7 +123,7 @@ class Robot:
         """
         return filter(self.is_location_safe, self.adjacent_unoccupied_locations())
 
-    def random_adjcaent_unoccupied_safe_location(self):
+    def random_adjacent_unoccupied_safe_location(self):
         """Returns a randomly chosen, adjacent, safe, unoccupied, location."""
         return random.choice(self.adjacent_unoccupied_safe_locations())
 
