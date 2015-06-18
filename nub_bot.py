@@ -18,7 +18,7 @@ class Robot:
         if (self.is_very_weak() or self.is_outnumbered()) and self.is_able_to_flee():
             return self.flee()
 
-        if self.is_facing_certain_dealth():
+        if self.is_facing_certain_death():
             return self.suicide()
 
         if self.is_adjacent_to_enemy_bot():
@@ -75,7 +75,7 @@ class Robot:
         """Returns True if the robot is adjacent to any unoccupied locations."""
         return len(self.adjacent_unoccupied_locations()) > 0
 
-    def is_facing_certain_dealth(self):
+    def is_facing_certain_death(self):
         """Returns True if the bot is near an enemy, can't flee, and is very weak"""
         return self.is_adjacent_to_enemy_bot() and self.is_able_to_flee() == False and self.is_very_weak()
 
